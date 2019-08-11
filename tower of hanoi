@@ -1,0 +1,7 @@
+void toh(int N, int from, int to, int aux, long long &moves) {
+    if(N == 0) return;
+    toh(N-1, from, aux, to, moves);
+    printf("move disk %d from rod %d to rod %d\n", N, from, to);
+    ++moves;
+    toh(N-1, aux, to, from, moves);
+}
