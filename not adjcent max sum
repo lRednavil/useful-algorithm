@@ -1,0 +1,9 @@
+long noAdjcentMaxSum(long arr[]){      
+  long incl_sum = arr[0], excl_sum = 0;
+  long mx_sum = 0;
+  for(int i = 1; i < n; i++){
+  mx_sum = max(incl_sum, excl_sum);
+  incl_sum = excl_sum + arr[i];
+  excl_sum = mx_sum;
+  }
+}
