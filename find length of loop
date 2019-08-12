@@ -3,7 +3,7 @@ int countNodesinLoop(struct Node *head)
      Node* turtle = head;
      Node* hare = head->next;
      
-     int power = 1, lam = 1, x = 0;
+     int power = 1, lam = 1;
      
      while(hare && turtle != hare){
          if(power == lam){
