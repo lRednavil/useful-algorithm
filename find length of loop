@@ -17,4 +17,15 @@ int countNodesinLoop(struct Node *head)
      
      if(!hare) return 0;
      return lam;
+     
+     //this is use for removing loop
+     turtle = hare = head;
+     for(int i = 0; i < lam; i++) hare = hare->next;
+     
+     while(turtle->next != hare->next){
+         turtle = turtle->next;
+         hare = hare->next;
+     }
+     
+     hare->next = NULL;
 }
