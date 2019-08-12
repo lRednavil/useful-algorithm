@@ -1,0 +1,20 @@
+int countNodesinLoop(struct Node *head)
+{
+     Node* turtle = head;
+     Node* hare = head->next;
+     
+     int power = 1, lam = 1, x = 0;
+     
+     while(hare && turtle != hare){
+         if(power == lam){
+             turtle = hare;
+             power <<= 1;
+             lam = 0;
+         }
+         hare = hare->next;
+         lam++;
+     }
+     
+     if(!hare) return 0;
+     return lam;
+}
