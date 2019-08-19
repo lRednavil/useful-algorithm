@@ -1,0 +1,23 @@
+//if arr[l] > arr[largest] changes to arr[l] < arr[largest] becomes minHeap
+void heapify(int arr[], int n, int i)  {
+      // Your Code Here
+      int largest = i;
+      
+      int l = i*2 + 1;
+      int r = i*2 + 2;
+      
+      if(l < n && arr[l] > arr[largest]) largest = l;
+      if(r < n && arr[r] > arr[largest]) largest = r;
+      
+      if(largest != i){
+          swap(arr[i], arr[largest]);
+          heapify(arr, n, largest);
+      }
+}
+
+// Rearranges input array so that it becomes a max heap
+void buildHeap(int arr[], int n)  { 
+    // Your Code Here
+    for(int i = (n-1)/2; i >= 0; i--)
+    heapify(arr, n, i);
+}
